@@ -1,3 +1,4 @@
+library("openxlsx")
 mydf <- read.xlsx("2017-01-08 All Activity Report FY17 Q2.xlsx", sheet = 1, startRow = 1, colNames = TRUE)
 
 ##test for full name
@@ -115,6 +116,8 @@ for(i in 2:nrow(newdata)){
 		newdata[i,67]=newdata[i,67]+1
 		}
 	}
+
+
 
 Total_Count<-newdata[,67]+newdata[,65]+newdata[,63]+newdata[,61]+newdata[,59]+newdata[,57]+newdata[,55]+newdata[,53]
 newdata2<-cbind(newdata,Total_Count)
