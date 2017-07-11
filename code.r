@@ -118,8 +118,17 @@ for(i in 2:nrow(newdata)){
 	}
 
 
+EnterID_Count<-rep(0,nrow(mydf2))
+newdata<-cbind(newdata,EnterID_Count)
 
-Total_Count<-newdata[,67]+newdata[,65]+newdata[,63]+newdata[,61]+newdata[,59]+newdata[,57]+newdata[,55]+newdata[,53]
+for(i in 2:nrow(newdata)){
+	if (newdata[i-1,1]== newdata[i,1]){
+		newdata[i-1,68]=newdata[i-1,68]+1
+		newdata[i,68]=newdata[i,68]+1
+		}
+	}
+
+Total_Count<-newdata[,68]+newdata[,67]+newdata[,65]+newdata[,63]+newdata[,61]+newdata[,59]+newdata[,57]+newdata[,55]+newdata[,53]
 newdata2<-cbind(newdata,Total_Count)
 
 Sys.setenv(R_ZIPCMD= "C:/Rtools/bin/zip")
