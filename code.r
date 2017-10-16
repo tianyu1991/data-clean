@@ -9,9 +9,9 @@ mydf3<-cbind(mydf2,FullName_Count)
 
 newdata<-mydf3[order(FullName),]
 for(i in 2:nrow(newdata)){
-	if (newdata[i-1,52]== newdata[i,52]){
-		newdata[i-1,53]=newdata[i-1,53]+1
-		newdata[i,53]=newdata[i,53]+1
+	if (newdata[i-1,49]== newdata[i,49]){
+		newdata[i-1,50]=newdata[i-1,50]+1
+		newdata[i,50]=newdata[i,50]+1
 		}
 	}
 
@@ -23,15 +23,15 @@ FirstDOB_Count<-rep(0,nrow(mydf2))
 newdata<-cbind(newdata,FirstDOB_Count)
 
 for(i in 2:nrow(newdata)){
-	if (newdata[i-1,54]== newdata[i,54]){
-		newdata[i-1,55]=newdata[i-1,55]+1
-		newdata[i,55]=newdata[i,55]+1
+	if (newdata[i-1,51]== newdata[i,51]){
+		newdata[i-1,52]=newdata[i-1,52]+1
+		newdata[i,52]=newdata[i,52]+1
 		}
 	}
 
 
 
-FirstAdd<-paste(newdata[,2],newdata[,13],newdata[,14],sep=" ")
+FirstAdd<-paste(newdata[,2],newdata[,12],newdata[,13],sep=" ")
 newdata<-cbind(newdata,FirstAdd)
 newdata<-newdata[order(FirstAdd),]
 
@@ -39,9 +39,9 @@ FirstAdd_Count<-rep(0,nrow(mydf2))
 newdata<-cbind(newdata,FirstAdd_Count)
 
 for(i in 2:nrow(newdata)){
-	if (newdata[i-1,56]== newdata[i,56]){
-		newdata[i-1,57]=newdata[i-1,57]+1
-		newdata[i,57]=newdata[i,57]+1
+	if (newdata[i-1,53]== newdata[i,53]){
+		newdata[i-1,54]=newdata[i-1,54]+1
+		newdata[i,54]=newdata[i,54]+1
 		}
 	}
 
@@ -54,13 +54,13 @@ LastDOB_Count<-rep(0,nrow(mydf2))
 newdata<-cbind(newdata,LastDOB_Count)
 
 for(i in 2:nrow(newdata)){
-	if (newdata[i-1,58]== newdata[i,58]){
-		newdata[i-1,59]=newdata[i-1,59]+1
-		newdata[i,59]=newdata[i,59]+1
+	if (newdata[i-1,55]== newdata[i,55]){
+		newdata[i-1,56]=newdata[i-1,56]+1
+		newdata[i,56]=newdata[i,56]+1
 		}
 	}
 
-FirstAddZip<-paste(newdata[,2],newdata[,13],newdata[,15],sep=" ")
+FirstAddZip<-paste(newdata[,2],newdata[,12],newdata[,14],sep=" ")
 newdata<-cbind(newdata,FirstAddZip)
 newdata<-newdata[order(FirstAddZip),]
 
@@ -68,13 +68,13 @@ FirstAddZip_Count<-rep(0,nrow(mydf2))
 newdata<-cbind(newdata,FirstAddZip_Count)
 
 for(i in 2:nrow(newdata)){
-	if (newdata[i-1,60]== newdata[i,60]){
-		newdata[i-1,61]=newdata[i-1,61]+1
-		newdata[i,61]=newdata[i,61]+1
+	if (newdata[i-1,57]== newdata[i,57]){
+		newdata[i-1,58]=newdata[i-1,58]+1
+		newdata[i,58]=newdata[i,58]+1
 		}
 	}
 
-FirstAddZip2<-paste(newdata[,2],newdata[,14],newdata[,15],sep=" ")
+FirstAddZip2<-paste(newdata[,2],newdata[,13],newdata[,14],sep=" ")
 newdata<-cbind(newdata,FirstAddZip2)
 newdata<-newdata[order(FirstAddZip2),]
 
@@ -82,13 +82,13 @@ FirstAddZip2_Count<-rep(0,nrow(mydf2))
 newdata<-cbind(newdata,FirstAddZip2_Count)
 
 for(i in 2:nrow(newdata)){
-	if (newdata[i-1,62]== newdata[i,62]){
-		newdata[i-1,63]=newdata[i-1,63]+1
-		newdata[i,63]=newdata[i,63]+1
+	if (newdata[i-1,59]== newdata[i,59]){
+		newdata[i-1,60]=newdata[i-1,60]+1
+		newdata[i,60]=newdata[i,60]+1
 		}
 	}
 
-DOBZip<-paste(newdata[,4],newdata[,15],sep=" ")
+DOBZip<-paste(newdata[,4],newdata[,14],sep=" ")
 newdata<-cbind(newdata,DOBZip)
 newdata<-newdata[order(DOBZip),]
 
@@ -96,13 +96,13 @@ DOBZip_Count<-rep(0,nrow(mydf2))
 newdata<-cbind(newdata,DOBZip_Count)
 
 for(i in 2:nrow(newdata)){
-	if (newdata[i-1,64]== newdata[i,59]){
-		newdata[i-1,65]=newdata[i-1,65]+1
-		newdata[i,65]=newdata[i,65]+1
+	if (newdata[i-1,61]== newdata[i,61]){
+		newdata[i-1,62]=newdata[i-1,62]+1
+		newdata[i,62]=newdata[i,62]+1
 		}
 	}
 
-DOBAdd<-paste(newdata[,4],newdata[,13],sep=" ")
+DOBAdd<-paste(newdata[,4],newdata[,12],sep=" ")
 newdata<-cbind(newdata,DOBAdd)
 newdata<-newdata[order(DOBAdd),]
 
@@ -111,9 +111,9 @@ DOBAdd_Count<-rep(0,nrow(mydf2))
 newdata<-cbind(newdata,DOBAdd_Count)
 
 for(i in 2:nrow(newdata)){
-	if (newdata[i-1,66]== newdata[i,66]){
-		newdata[i-1,67]=newdata[i-1,67]+1
-		newdata[i,67]=newdata[i,67]+1
+	if (newdata[i-1,63]== newdata[i,63]){
+		newdata[i-1,64]=newdata[i-1,64]+1
+		newdata[i,64]=newdata[i,64]+1
 		}
 	}
 
@@ -123,12 +123,12 @@ newdata<-cbind(newdata,EnterID_Count)
 
 for(i in 2:nrow(newdata)){
 	if (newdata[i-1,1]== newdata[i,1]){
-		newdata[i-1,68]=newdata[i-1,68]+1
-		newdata[i,68]=newdata[i,68]+1
+		newdata[i-1,65]=newdata[i-1,65]+1
+		newdata[i,65]=newdata[i,65]+1
 		}
 	}
 
-Total_Count<-newdata[,68]+newdata[,67]+newdata[,65]+newdata[,63]+newdata[,61]+newdata[,59]+newdata[,57]+newdata[,55]+newdata[,53]
+Total_Count<-newdata[,65]+newdata[,64]+newdata[,62]+newdata[,60]+newdata[,58]+newdata[,56]+newdata[,54]+newdata[,52]+newdata[,50]
 newdata2<-cbind(newdata,Total_Count)
 
 Sys.setenv(R_ZIPCMD= "C:/Rtools/bin/zip")
