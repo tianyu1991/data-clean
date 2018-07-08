@@ -131,3 +131,6 @@ example.4 <- clientsTable %>% find_ClientGUIDs(.return_values = TRUE, LName, DOB
 
 write.csv(example.3, "find_ClientGUIDs_FName_LName_DOB.csv", row.names = FALSE)
 write.csv(example.4, "find_ClientGUIDs_LName_DOB_Address1_dupes.csv", row.names = FALSE)
+
+newdata <- subset(mydata, age >= 20 | age < 10, 
+select=c(ID, Weight))
