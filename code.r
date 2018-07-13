@@ -1,7 +1,37 @@
 library("openxlsx")
 mydf <- read.xlsx("Copy of Master All Activity Report 2015-2017 use this May 2017.xlsx", sheet = 1, startRow = 1, colNames = TRUE)
 
-##test for full name
+# Cleaning the data
+# 1. Assuming that the addresses in the Clients table have already been standardized - do some basic formatting
+# on FName, MiddleInitial, and LName columns
+
+clientsTable<-mydf
+colnames(clientsTable)[1] <- "ClientGUID"
+
+clientsTable$First.Name <- tolower(clientsTable$First.Name)
+clientsTable$Last.Name <- tolower(clientsTable$Last.Name)
+
+
+# 2. Eliminating leading and trailing whitespace from all columns (may take a minute or two)
+for (i in seq_along(names(clientsTable))){
+  trimws(as.character(clientsTable[i]), which = c("both"))
+}
+
+# 3. Removing all formatting (spaces, parentheses, dashes) from phone numbers
+clientsTable$HomePhone <- gsub("[^0-9.]", "", clientsTable$HomePhone)
+clientsTable$WorkPhone <- gsub("[^0-9.]", "", clientsTable$WorkPhone)
+clientsTable$CellPhone <- gsub("[^0-9.]", "", clientsTable$CellPhone)
+
+# 4. Formatting the Address2 column (convert to all uppercase, remove 'Apt' string, etc.)
+clientsTable$Address.2 <- tolower(clientsTable$Address.2)
+clientsTable$Address.2 <- gsub("(apt|aptment)*(\\s)", "",clientsTable$Address.2)
+clientsTable$Address.2 <- gsub("#", "",clientsTable$Address.2)
+
+
+mydf<-clientsTable
+
+## order,mark duplicates
+
 FullName<-paste(mydf$First.Name,mydf$Last.Name,sep=" ")
 mydf2<-cbind(mydf,FullName)
 FullName_Count<-rep(0,nrow(mydf2))
